@@ -1,0 +1,158 @@
+<!--LEGAL-DNA:{"jurisdiction":"US/MN/Baxter","export_tag":"EAR99","spdx":"MIT","artifact_time":1749846053389,"def_pub":"OIN","consent_req":true,"city":"Baxter"}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>100 God-Tier Hidden Web Money Platforms</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body { height: 100%; margin: 0; background: #0f172a; color: #f1f5f9; }
+    .card:hover { @apply bg-gray-700; }
+    ::placeholder { color: #94a3b8; }
+  </style>
+</head>
+<body class="flex flex-col h-full">
+  <header class="bg-gray-900 p-4 text-center text-2xl font-bold">
+    100 God-Tier Web Money Tools for Devs/Automation/AI
+  </header>
+  <div class="p-4">
+    <input
+      id="search"
+      type="text"
+      placeholder="Search tools…"
+      class="w-full p-2 rounded bg-gray-800 focus:outline-none focus:ring focus:border-blue-500"
+    />
+  </div>
+  <main class="flex-1 overflow-auto p-4">
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+  </main>
+  <script>
+    const links = [
+      // GOD-TIER: Monetize Code, Prompts, LLM, DevOps, SaaS, Automation
+      { name: "PromptBase", url: "https://promptbase.com/", desc: "Sell GPT/AI prompts for cash, recurring sales" },
+      { name: "GPT Store", url: "https://gptstore.ai/", desc: "Marketplace for selling ChatGPT custom bots" },
+      { name: "Replit Bounties", url: "https://replit.com/bounties", desc: "Get paid to solve coding tasks and automation gigs" },
+      { name: "Indie Hackers Products", url: "https://www.indiehackers.com/products", desc: "Launch microtools, find high-value SaaS ideas" },
+      { name: "Gumroad", url: "https://gumroad.com/", desc: "Sell code, scripts, templates, or digital products" },
+      { name: "Ko-fi Shop", url: "https://ko-fi.com/", desc: "Sell premium tools, plugins, or paid access" },
+      { name: "Product Hunt", url: "https://www.producthunt.com/", desc: "Viral launchpad for dev tools and SaaS products" },
+      { name: "Fiverr DevOps", url: "https://www.fiverr.com/", desc: "Sell automation, devops, API, or GPT gigs (scale with scripts)" },
+      { name: "Upwork AI/LLM", url: "https://www.upwork.com/", desc: "Monetize advanced LLM, prompt, and automation skills" },
+      { name: "Freelancer AI", url: "https://www.freelancer.com/", desc: "Bounties for AI/automation-focused projects" },
+      { name: "Stripe for SaaS", url: "https://dashboard.stripe.com/register", desc: "Launch instant paywalls for microSaaS/APIs" },
+      { name: "GitHub Sponsors", url: "https://github.com/sponsors", desc: "Monetize open-source tools, fund private repos" },
+      { name: "Buy Me a Coffee", url: "https://www.buymeacoffee.com/", desc: "Monetize mini-projects, guides, or one-off scripts" },
+      { name: "AppSumo Marketplace", url: "https://appsumo.com/marketplace/", desc: "Sell SaaS, automation, and script products" },
+      { name: "Superpeer", url: "https://superpeer.com/", desc: "Monetize 1:1 expert calls (AI, automation, dev mentoring)" },
+      { name: "MentorCruise", url: "https://mentorcruise.com/", desc: "Get paid to coach advanced tech and AI topics" },
+      { name: "PartnerStack", url: "https://partnerstack.com/", desc: "Stack affiliate revenue from dev tool deals" },
+      { name: "Buildspace", url: "https://buildspace.so/", desc: "Earn from shipping and sharing dev/AI projects" },
+      { name: "a16z CANVAS", url: "https://canvas.a16z.com/", desc: "Find tech bounties and startup collabs" },
+      { name: "MindStudio", url: "https://www.mindstudio.com/", desc: "White-label and resell AI/LLM tools" },
+      { name: "PromptSea", url: "https://promptsea.io/", desc: "NFT/marketplace for AI prompts and agents" },
+      { name: "Genius Prompt", url: "https://geniusprompt.com/", desc: "Sell prompt packs and micro automations" },
+      { name: "Dev Hunt", url: "https://devhunt.org/", desc: "Launch and monetize dev tools and SaaS apps" },
+      { name: "Rentry", url: "https://rentry.co/", desc: "Pastebin with Stripe for micro SaaS/prompt sales" },
+      { name: "Lemon Squeezy", url: "https://www.lemonsqueezy.com/", desc: "Alternative paywall for code/scripts" },
+      { name: "Paddle", url: "https://paddle.com/", desc: "API-driven checkout for global dev/SaaS sales" },
+      { name: "TidyCal Flipping", url: "https://appsumo.com/products/tidycal/", desc: "Buy LTD, automate, flip calendar SaaS access" },
+      { name: "Notion Market", url: "https://notionmarketplace.com/", desc: "Sell Notion templates, automations, databases" },
+      { name: "SaaSFrame", url: "https://www.saasframe.io/", desc: "Inspiration for micro SaaS/app launches" },
+      { name: "Prompt Attack", url: "https://promptattack.com/", desc: "Sell, share, and syndicate GPT/AI prompts" },
+      { name: "MidPrompt", url: "https://midprompt.com/", desc: "Sell, trade, and license AI image prompts" },
+      { name: "SudoWrite Marketplace", url: "https://marketplace.sudowrite.com/", desc: "Monetize LLM-powered writing prompts/tools" },
+      { name: "Etsy AI/Dev", url: "https://www.etsy.com/search?q=ai+tool", desc: "Sell dev/AI tools as digital downloads" },
+      { name: "ThemeForest Scripts", url: "https://themeforest.net/category/scripts", desc: "Sell high-end scripts, code, automations" },
+      { name: "Envato Studio", url: "https://studio.envato.com/", desc: "Freelance dev and automation gigs" },
+      { name: "Nocode HQ", url: "https://nocodehq.com/", desc: "Sell automation scripts and no-code bundles" },
+      { name: "Zapier Expert", url: "https://zapier.com/experts/", desc: "Monetize Zapier automation services" },
+      { name: "Make (Integromat)", url: "https://www.make.com/en/marketplace", desc: "Sell no-code automations, integrate APIs" },
+      { name: "ThriveCart", url: "https://thrivecart.com/", desc: "Sell SaaS or code with 1-click checkout" },
+      { name: "ShareGPT", url: "https://sharegpt.com/", desc: "Monetize AI convo threads with affiliate scripts" },
+      { name: "Sheet2Site", url: "https://www.sheet2site.com/", desc: "Auto-build/sell sites with Google Sheets" },
+      { name: "SheetDB", url: "https://sheetdb.io/", desc: "Monetize APIs with spreadsheet-to-REST" },
+      { name: "Stack AI", url: "https://stack-ai.com/", desc: "Monetize agent flows and AI plugins" },
+      { name: "Voiceflow Marketplace", url: "https://www.voiceflow.com/marketplace", desc: "Sell/monetize voice AI automations" },
+      { name: "NoCodeAPI", url: "https://nocodeapi.com/", desc: "Sell APIs, automate scripts w/ zero backend" },
+      { name: "Widgetbox", url: "https://widgetbox.app/", desc: "Monetize web widgets or SaaS embeds" },
+      { name: "BuySellAds", url: "https://www.buysellads.com/", desc: "Monetize high-traffic tools w/ direct ads" },
+      { name: "Buy Me Crypto", url: "https://buymecrypto.com/", desc: "Accept crypto for scripts/tools (no KYC)" },
+      { name: "Geniuslink", url: "https://geniuslink.com/", desc: "Maximize affiliate commission on every click" },
+      { name: "Payhip", url: "https://payhip.com/", desc: "Sell digital goods, scripts, access, with paywalls" },
+      { name: "Sello", url: "https://sello.com/", desc: "Monetize scripts/tools as e-commerce products" },
+      { name: "Shoppy", url: "https://shoppy.gg/", desc: "Sell digital products and automation bundles" },
+      { name: "Selldone", url: "https://selldone.com/", desc: "One-click SaaS/tool storefront with payout" },
+      { name: "Fastspring", url: "https://fastspring.com/", desc: "Monetize global software/tools with auto VAT" },
+      { name: "TeeSpring", url: "https://www.teespring.com/", desc: "Sell branded merch for your tools/audience" },
+      { name: "BitClout", url: "https://bitclout.com/", desc: "Tokenize and sell influence, monetize audience" },
+      { name: "Creator Spring", url: "https://creatorspring.com/", desc: "Sell digital goods/scripts to followers" },
+      { name: "Vercel Marketplace", url: "https://vercel.com/marketplace", desc: "Monetize Next.js/JS plugins and SaaS tools" },
+      { name: "Awesome Indie", url: "https://awesomeindie.com/", desc: "Launch tools, drive organic sales" },
+      { name: "Reshuffle", url: "https://www.reshuffle.com/", desc: "Monetize open API scripts/connectors" },
+      { name: "RapidAPI Hub", url: "https://rapidapi.com/hub", desc: "Sell your APIs/automation endpoints" },
+      { name: "Public APIs", url: "https://public-apis.io/", desc: "List, syndicate, and monetize API endpoints" },
+      { name: "OpenAPI Directory", url: "https://www.openapidirectory.com/", desc: "Distribute/sell open APIs to devs" },
+      { name: "ChainGPT Tools", url: "https://tools.chaingpt.org/", desc: "Deploy, monetize, and license GPT tools" },
+      { name: "AI Scout", url: "https://ai.scout/", desc: "Find and publish paid AI gigs" },
+      { name: "BetaList", url: "https://betalist.com/", desc: "Launch new products, get early users" },
+      { name: "BetaPage", url: "https://betapage.co/", desc: "Early adopter traffic for tools/SaaS" },
+      { name: "SaaS Launchpad", url: "https://saaslaunchpad.io/", desc: "Rapid SaaS launch and monetization stack" },
+      { name: "Makerpad", url: "https://www.makerpad.co/", desc: "Learn/sell no-code automations" },
+      { name: "Skillshare AI", url: "https://www.skillshare.com/browse/ai", desc: "Create/publish AI/automation courses" },
+      { name: "Udemy Instructor", url: "https://www.udemy.com/teaching/", desc: "Monetize courses on dev, prompt, ops, automation" },
+      { name: "Maven", url: "https://maven.com/", desc: "Host premium paid cohort-based classes" },
+      { name: "Circle Communities", url: "https://circle.so/", desc: "Sell access to dev/AI mastermind groups" },
+      { name: "Substack", url: "https://substack.com/", desc: "Monetize high-quality dev/automation content" },
+      { name: "Ghost Paid", url: "https://ghost.org/", desc: "Paid newsletters for code/prompt insights" },
+      { name: "Hashnode", url: "https://hashnode.com/", desc: "Monetize blogs, get dev sponsor leads" },
+      { name: "Medium Partner", url: "https://medium.com/creators", desc: "Earn from dev/AI article readership" },
+      { name: "BuySellText", url: "https://buyselltext.com/", desc: "Sell prompt packs, scripts, or docs" },
+      { name: "ContentFly", url: "https://contentfly.com/", desc: "AI-powered content writing sales" },
+      { name: "Weglot Affiliate", url: "https://weglot.com/affiliates/", desc: "Earn recurring for localization devs" },
+      { name: "Transifex Marketplace", url: "https://marketplace.transifex.com/", desc: "Monetize translation automation for SaaS" },
+      { name: "Gengo", url: "https://gengo.com/", desc: "Microtask/LLM translation automation" },
+      { name: "Copy.ai Affiliate", url: "https://www.copy.ai/affiliates", desc: "Earn affiliate for LLM-powered tool sales" },
+      { name: "SitePoint Marketplace", url: "https://sitepoint.com/marketplace/", desc: "Sell scripts, templates, or automation guides" },
+      { name: "BountySource", url: "https://bountysource.com/", desc: "Solve issues for dev/AI projects, get paid" },
+      { name: "Devpost", url: "https://devpost.com/", desc: "Join hackathons, win cash with automation" },
+      { name: "Kaggle Competitions", url: "https://www.kaggle.com/competitions", desc: "Win money for data/AI solutions" },
+      { name: "Colab Marketplace", url: "https://colab.research.google.com/", desc: "Distribute/monetize shareable notebooks" },
+      { name: "MLContest", url: "https://mlcontests.com/", desc: "Compete for cash with ML/AI automation" },
+      { name: "Freelancer Stack", url: "https://freelancerstack.com/", desc: "Syndicate gigs, find buyers for tools" },
+      { name: "RemoteOK AI", url: "https://remoteok.com/remote-ai-jobs", desc: "High-paying remote AI/dev gigs" },
+      { name: "Toptal", url: "https://toptal.com/", desc: "Elite freelance AI/dev, $10k+ contracts" },
+      { name: "Gun.io", url: "https://www.gun.io/", desc: "Premium freelance automation contracts" },
+      { name: "Contra", url: "https://contra.com/", desc: "Flexible project-based dev/AI gigs" },
+      { name: "Flexiple", url: "https://flexiple.com/", desc: "Premium client SaaS/dev projects" },
+      { name: "Hacker Noon", url: "https://hackernoon.com/startups", desc: "Write and monetize technical content" },
+      { name: "Sponsy", url: "https://sponsy.com/", desc: "Find sponsors for your projects/tools" },
+      { name: "Respona", url: "https://respona.com/", desc: "Automate outreach to sell SaaS/tools" },
+      { name: "Refersion", url: "https://www.refersion.com/", desc: "Create your own affiliate program for tools" },
+    ];
+
+    const grid = document.getElementById("grid");
+    const render = (list) => {
+      grid.innerHTML = "";
+      list.forEach((link, i) => {
+        const a = document.createElement("a");
+        a.href = link.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.className = "card block p-4 bg-gray-800 rounded shadow hover:shadow-lg transition";
+        a.innerHTML = `<div class="font-semibold">${i+1}. ${link.name}</div>
+          <div class="text-xs text-gray-400 mb-1">${link.url}</div>
+          <div class="text-xs text-gray-300">${link.desc || ""}</div>`;
+        grid.appendChild(a);
+      });
+    };
+
+    render(links);
+
+    document.getElementById("search").addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+      render(links.filter(l => l.name.toLowerCase().includes(q) || l.url.includes(q) || (l.desc && l.desc.toLowerCase().includes(q))));
+    });
+  </script>
+</body>
+</html>
